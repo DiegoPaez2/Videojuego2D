@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtdrebmj0w8y6"]
+
+[ext_resource type="Texture2D" uid="uid://vepu111padmd" path="res://Recursos/Protagonistas/spritesheet-characters-default.png" id="1_3wlyv"]
+[ext_resource type="Script" uid="uid://bryq8dop36o2e" path="res://Codigo/jugador_1.gd" id="1_pq3ji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq3ji"]
+atlas = ExtResource("1_3wlyv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfjjw"]
+atlas = ExtResource("1_3wlyv")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awscu"]
+atlas = ExtResource("1_3wlyv")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kx806"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq3ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfjjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awscu")
+}],
+"loop": true,
+"name": &"reposo",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh5v1"]
+radius = 9.0
+height = 18.0
+
+[node name="Jugador" type="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(0, -1)
+script = ExtResource("1_pq3ji")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.38419e-07, -3)
+scale = Vector2(0.214844, 0.195313)
+sprite_frames = SubResource("SpriteFrames_kx806")
+animation = &"reposo"
+autoplay = "reposo"
+frame = 2
+frame_progress = 0.599247
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_eh5v1")
