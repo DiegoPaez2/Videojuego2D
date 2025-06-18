@@ -11,7 +11,10 @@ config_version=5
 [application]
 
 config/name="Juevo2D (4.4)"
+Updated upstream:Videojuego2D-main/juevo-2d-(4.4)/project.godot
 run/main_scene="uid://bf2w3o72kqydc"
+run/main_scene="uid://dnr41wysmvwxx"
+Stashed changes:juevo-2d-(4.4)/project.godot
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
