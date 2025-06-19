@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnr41wysmvwxx"]
+[gd_scene load_steps=10 format=3 uid="uid://dnr41wysmvwxx"]
 
 [ext_resource type="Texture2D" uid="uid://bfb4f8nqck1tm" path="res://Recursos/Plataformas/mapa2.png" id="1_0n8q0"]
 [ext_resource type="Script" uid="uid://jgx3c1qiu7m6" path="res://Scripts/nivel_2.gd" id="1_w7dep"]
 [ext_resource type="PackedScene" uid="uid://dtdrebmj0w8y6" path="res://Escenas/jugador1.tscn" id="2_0onfd"]
 [ext_resource type="Texture2D" uid="uid://oj3eq0gv27s0" path="res://Recursos/Fondo/FondoN.jpg" id="3_yfoli"]
+[ext_resource type="PackedScene" uid="uid://bjflmgcquegtw" path="res://Escenas/character_body_2d.tscn" id="5_g1bbh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0onfd"]
 texture = ExtResource("1_0n8q0")
@@ -1138,10 +1139,11 @@ position_smoothing_enabled = true
 motion_mirroring = Vector2(1200, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
-position = Vector2(308, -58)
+position = Vector2(309, -71)
 scale = Vector2(0.676042, 0.66)
 texture = ExtResource("3_yfoli")
 
+<<<<<<< HEAD
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ContenedorUI" type="Control" parent="UI"]
@@ -1186,3 +1188,15 @@ text = "REINICIAR
 [connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Reiniciar" to="." method="_on_pausar_pressed"]
 [connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+=======
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_g1bbh")]
+position = Vector2(-17, -22)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("5_g1bbh")]
+position = Vector2(52, -53)
+
+[connection signal="pressed" from="Jugador/VBoxContainer/Pausar" to="." method="_on_pausar_pressed"]
+[connection signal="pressed" from="Jugador/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Jugador/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Jugador/VBoxContainer/Reiniciar" to="." method="_on_pausar_pressed"]
+>>>>>>> 38f205d05a6cbf6a6fae9f680f06372f06653446

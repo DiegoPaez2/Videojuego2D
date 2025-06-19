@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf2w3o72kqydc"]
+[gd_scene load_steps=11 format=3 uid="uid://bf2w3o72kqydc"]
 
 [ext_resource type="Script" uid="uid://chj8e58my2pr7" path="res://Scripts/nivel_1.gd" id="1_3c2k2"]
 [ext_resource type="Texture2D" uid="uid://b3ectallfxibb" path="res://Recursos/Plataformas/mapa1.png" id="1_gj223"]
 [ext_resource type="PackedScene" uid="uid://dtdrebmj0w8y6" path="res://Escenas/jugador1.tscn" id="2_hid1b"]
 [ext_resource type="Texture2D" uid="uid://b77qocssxhrpj" path="res://Recursos/Fondo/Summer3.png" id="3_os1ql"]
+[ext_resource type="PackedScene" uid="uid://bjflmgcquegtw" path="res://Escenas/character_body_2d.tscn" id="5_lswwr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hid1b"]
 texture = ExtResource("1_gj223")
@@ -441,6 +442,7 @@ position = Vector2(240, -114)
 scale = Vector2(0.30599, 0.305556)
 texture = ExtResource("3_os1ql")
 
+<<<<<<< HEAD
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ContenedorUI" type="Control" parent="UI"]
@@ -485,3 +487,14 @@ text = "REINICIAR
 [connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Pausar" to="." method="_on_pausar_pressed"]
 [connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+=======
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_lswwr")]
+position = Vector2(85, 23)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("5_lswwr")]
+position = Vector2(201, 28)
+
+[connection signal="pressed" from="Jugador/Camera2D/VBoxContainer/Pausar" to="." method="_on_pausar_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+>>>>>>> 38f205d05a6cbf6a6fae9f680f06372f06653446
