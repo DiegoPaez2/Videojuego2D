@@ -58,7 +58,7 @@ theme_override_constants/separation = 80
 [node name="Individual" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 47
+theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_4hy44")
 text = "JUGADOR INDIVIDUAL
 "

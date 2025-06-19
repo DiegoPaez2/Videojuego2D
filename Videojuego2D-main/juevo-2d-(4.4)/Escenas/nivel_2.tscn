@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnr41wysmvwxx"]
+[gd_scene load_steps=9 format=3 uid="uid://dnr41wysmvwxx"]
 
 [ext_resource type="Texture2D" uid="uid://bfb4f8nqck1tm" path="res://Recursos/Plataformas/mapa2.png" id="1_0n8q0"]
 [ext_resource type="Script" uid="uid://jgx3c1qiu7m6" path="res://Scripts/nivel_2.gd" id="1_w7dep"]
 [ext_resource type="PackedScene" uid="uid://dtdrebmj0w8y6" path="res://Escenas/jugador1.tscn" id="2_0onfd"]
 [ext_resource type="Texture2D" uid="uid://oj3eq0gv27s0" path="res://Recursos/Fondo/FondoN.jpg" id="3_yfoli"]
-[ext_resource type="PackedScene" uid="uid://bjflmgcquegtw" path="res://Escenas/character_body_2d.tscn" id="5_g1bbh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0onfd"]
 texture = ExtResource("1_0n8q0")
@@ -1133,70 +1132,50 @@ position = Vector2(0, -10)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Jugador"]
+offset_left = -32.0
+offset_top = -82.0
+offset_right = 116.0
+offset_bottom = -8.0
+
+[node name="Pausar" type="Button" parent="Jugador/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_g1bbh")
+text = "PAUSAR
+"
+
+[node name="Continuar" type="Button" parent="Jugador/VBoxContainer"]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_ftdqf")
+text = "CONTINUAR"
+
+[node name="Reiniciar" type="Button" parent="Jugador/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_g1bbh")
+text = "REINICIAR
+"
+
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 motion_mirroring = Vector2(1200, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
-position = Vector2(309, -71)
+position = Vector2(308, -58)
 scale = Vector2(0.676042, 0.66)
 texture = ExtResource("3_yfoli")
 
-<<<<<<< HEAD
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="ContenedorUI" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/ContenedorUI"]
-layout_mode = 1
-offset_right = 148.0
-offset_bottom = 74.0
-
-[node name="Pausar" type="Button" parent="UI/ContenedorUI/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_g1bbh")
-text = "PAUSAR
-"
-
-[node name="Continuar" type="Button" parent="UI/ContenedorUI/VBoxContainer"]
-process_mode = 2
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_ftdqf")
-text = "CONTINUAR"
-
-[node name="Reiniciar" type="Button" parent="UI/ContenedorUI/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_g1bbh")
-text = "REINICIAR
-"
-
-[connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Pausar" to="." method="_on_pausar_pressed"]
-[connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Reiniciar" to="." method="_on_pausar_pressed"]
-[connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
-=======
-[node name="CharacterBody2D" parent="." instance=ExtResource("5_g1bbh")]
-position = Vector2(-17, -22)
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("5_g1bbh")]
-position = Vector2(52, -53)
-
 [connection signal="pressed" from="Jugador/VBoxContainer/Pausar" to="." method="_on_pausar_pressed"]
 [connection signal="pressed" from="Jugador/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="Jugador/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="Jugador/VBoxContainer/Reiniciar" to="." method="_on_pausar_pressed"]
->>>>>>> 38f205d05a6cbf6a6fae9f680f06372f06653446
+[connection signal="pressed" from="Jugador/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
