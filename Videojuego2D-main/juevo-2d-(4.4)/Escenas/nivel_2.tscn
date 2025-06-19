@@ -1132,39 +1132,6 @@ position = Vector2(0, -10)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Jugador"]
-offset_left = -32.0
-offset_top = -82.0
-offset_right = 116.0
-offset_bottom = -8.0
-
-[node name="Pausar" type="Button" parent="Jugador/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_g1bbh")
-text = "PAUSAR
-"
-
-[node name="Continuar" type="Button" parent="Jugador/VBoxContainer"]
-process_mode = 2
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_ftdqf")
-text = "CONTINUAR"
-
-[node name="Reiniciar" type="Button" parent="Jugador/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_g1bbh")
-text = "REINICIAR
-"
-
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
@@ -1175,7 +1142,47 @@ position = Vector2(308, -58)
 scale = Vector2(0.676042, 0.66)
 texture = ExtResource("3_yfoli")
 
-[connection signal="pressed" from="Jugador/VBoxContainer/Pausar" to="." method="_on_pausar_pressed"]
-[connection signal="pressed" from="Jugador/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="Jugador/VBoxContainer/Reiniciar" to="." method="_on_pausar_pressed"]
-[connection signal="pressed" from="Jugador/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ContenedorUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ContenedorUI"]
+layout_mode = 1
+offset_right = 148.0
+offset_bottom = 74.0
+
+[node name="Pausar" type="Button" parent="UI/ContenedorUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_g1bbh")
+text = "PAUSAR
+"
+
+[node name="Continuar" type="Button" parent="UI/ContenedorUI/VBoxContainer"]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ftdqf")
+text = "CONTINUAR"
+
+[node name="Reiniciar" type="Button" parent="UI/ContenedorUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_g1bbh")
+text = "REINICIAR
+"
+
+[connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Pausar" to="." method="_on_pausar_pressed"]
+[connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Reiniciar" to="." method="_on_pausar_pressed"]
+[connection signal="pressed" from="UI/ContenedorUI/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
